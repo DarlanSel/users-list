@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: darlan
+  password:
+
+development:
+  <<: *default
+  database: gs_development
+
+test:
+  <<: *default
+  database: gs_test
+
+production:
+  <<: *default
+  database: gs_production

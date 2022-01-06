@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This Ruby on Rails project is running with Ruby 2.7.2 and Rails 7.0.0.
 
-Things you may want to cover:
+Topics covered in this project are:
+* External API consume
+* File management with CarrierWave
+* Views layout with Bootstrap and Font Awesome
+* Pagintaion with Kaminari
+* Translations based on locale
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Next topics to be explored:
+* Tests with Rspec and Cucumber
+* Use of workers with Sidekiq to download pictures
+* Use Hotwire to update views when pictures are downloaded

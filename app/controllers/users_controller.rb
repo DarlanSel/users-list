@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
+  has_scope :by_name
+
   def index
-    @users = User.all.order(:name).page(params[:page]).per(10)
+    @users = apply_scopes(User.all)
+    @users = @users.order(:name).page(params[:page]).per(10)
   end
 
   def download_users

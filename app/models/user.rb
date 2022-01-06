@@ -8,6 +8,8 @@ class User < ApplicationRecord
 
   mount_uploader :picture, PictureUploader
 
+  scope :by_name, ->(name) { where(arel_table[:name].matches("%#{name}%")) }
+
   class << self
     def bulk_create_from_response(entries)
       users = []

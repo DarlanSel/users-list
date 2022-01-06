@@ -1,5 +1,6 @@
 pt:
   hello: Olá mundo!
+  search_by_name: 'Pesquisar por Nome:'
 
   activerecord:
     models:

@@ -1,0 +1,23 @@
+<h1>Usuários</h1>
+
+<%= link_to "Adicionar Usuários", download_users_users_path %>
+
+<table>
+  <thead>
+    <th>Nome</th>
+    <th>Email</th>
+    <th>Gênero</th>
+    <th>Fonte da Foto</th>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= user.gender %></td>
+        <td><%= user.picture_source %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,15 @@
+pt:
+  hello: Olá mundo!
+
+  activerecord:
+    models:
+      user: Usuário
+    attributes:
+      user:
+        name: Nome
+        picture: Imagem
+        email: Email
+        gender: Gênero
+        genders:
+          male: Masculino
+          female: Feminino

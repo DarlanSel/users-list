@@ -1,5 +1,5 @@
 <div class="d-inline-flex align-items-center pt-5">
-  <h1 class="">Usuários</h1>
+  <h1 class=""><%= User.model_name.human.pluralize %></h1>
   <%= link_to download_users_users_path, class: 'mx-2' do %>
     <i class="fas fa-plus-square fa-2x"></i>
   <% end %>
@@ -8,10 +8,10 @@
 
 <table class="table table-stripped table-hover align-middle">
   <thead class="">
-    <th>Foto</th>
-    <th>Nome</th>
-    <th>Gênero</th>
-    <th>Email</th>
+    <th><%= User.human_attribute_name :picture %></th>
+    <th><%= User.human_attribute_name :name %></th>
+    <th><%= User.human_attribute_name :gender %></th>
+    <th><%= User.human_attribute_name :email %></th>
   </thead>
 
   <tbody>
@@ -19,7 +19,7 @@
       <tr>
         <td><%= image_tag(user.picture.url) %></td>
         <td><%= user.name %></td>
-        <td><%= user.gender %></td>
+        <td><%= I18n.t user.gender, scope: %i[activerecord attributes user genders] %></td>
         <td><%= user.email %></td>
       </tr>
     <% end %>

@@ -12,6 +12,8 @@ gem 'carrierwave', '~> 2.0'
 
 gem 'font-awesome-sass', '~> 5.15.1'
 
+gem 'kaminari'
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 

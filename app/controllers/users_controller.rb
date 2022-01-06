@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-    @users = User.all.order(:name)
+    @users = User.all.order(:name).page(params[:page]).per(10)
   end
 
   def download_users

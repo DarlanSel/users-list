@@ -14,6 +14,8 @@ gem 'font-awesome-sass', '~> 5.15.1'
 
 gem 'kaminari'
 
+gem 'has_scope'
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 

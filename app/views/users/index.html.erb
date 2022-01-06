@@ -5,6 +5,24 @@
   <% end %>
 </div>
 
+<%= form_with url: users_url, method: :get do |f| %>
+  <div class="row g-3 align-items-center">
+    <div class="col-auto">
+      <%= f.label :by_name, t('search_by_name') %>
+    </div>
+    <div class="col-auto">
+      <%= f.text_field :by_name, value: params[:by_name], class: 'form-control' %>
+    </div>
+    <div class="col-auto">
+      <%= f.submit class: 'btn btn-primary' %>
+    </div>
+    <div class="col-auto">
+      <%= link_to users_path(clear: true), class: 'btn btn-danger' do %>
+        <i class="fas fa-times fa-1x"></i>
+      <% end %>
+    </div>
+  </div>
+<% end %>
 
 <table class="table table-stripped table-hover align-middle">
   <thead class="">

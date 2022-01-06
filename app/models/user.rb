@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   enum gender: { male: 0, female: 1 }
 
-  scope :without_picture, -> { reject { |u| u.picture.attached? } }
+  mount_uploader :picture, PictureUploader
 
   class << self
     def bulk_create_from_response(entries)
@@ -20,6 +20,15 @@ class User < ApplicationRecord
       end
 
       insert_all users
+
+      download_pictures
+    end
+
+    def download_pictures
+      User.all.each do |u|
+        u.remote_picture_url = u.picture_source
+        u.save!
+      end
     end
   end
 end

@@ -9,7 +9,7 @@ Topics covered in this project are:
 * Pagintaion with Kaminari
 * Translations based on locale
 * Tests with Rspec and Cucumber
+* Use of workers with Sidekiq to download pictures
 
 Next topics to be explored:
-* Use of workers with Sidekiq to download pictures
 * Use Hotwire to update views when pictures are downloaded

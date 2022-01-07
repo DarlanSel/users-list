@@ -9,10 +9,13 @@ development:
   <<: *default
   database: gs_development
 
-test:
+test: &test
   <<: *default
   database: gs_test
 
 production:
   <<: *default
   database: gs_production
+
+cucumber:
+  <<: *test

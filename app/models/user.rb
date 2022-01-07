@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   require 'uri'
 
-  validates :name, :email, :gender, :picture_source, presence: true
+  validates :name, :email, :gender, presence: true
   validates :email, uniqueness: true
 
   enum gender: { male: 0, female: 1 }

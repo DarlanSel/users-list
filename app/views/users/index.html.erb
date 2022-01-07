@@ -14,7 +14,7 @@
       <%= f.text_field :by_name, value: params[:by_name], class: 'form-control' %>
     </div>
     <div class="col-auto">
-      <%= f.submit class: 'btn btn-primary' %>
+      <%= f.submit class: 'btn btn-primary', id: 'submit' %>
     </div>
     <div class="col-auto">
       <%= link_to users_path(clear: true), class: 'btn btn-danger' do %>
@@ -35,10 +35,10 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= image_tag(user.picture.url) %></td>
-        <td><%= user.name %></td>
-        <td><%= I18n.t user.gender, scope: %i[activerecord attributes user genders] %></td>
-        <td><%= user.email %></td>
+        <td class="picture"><%= image_tag(user.picture.url) if user.picture.url %></td>
+        <td class="name"><%= user.name %></td>
+        <td class="gender"><%= I18n.t user.gender, scope: %i[activerecord attributes user genders] %></td>
+        <td class="email"><%= user.email %></td>
       </tr>
     <% end %>
   </tbody>

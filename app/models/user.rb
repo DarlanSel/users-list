@@ -9,6 +9,7 @@ class User < ApplicationRecord
   mount_uploader :picture, PictureUploader
 
   scope :by_name, ->(name) { where(arel_table[:name].matches("%#{name}%")) }
+  scope :pending_download, -> { select { |u| !u.picture_source.nil? && u.picture.file.nil? } }
 
   class << self
     def bulk_create_from_response(entries)
@@ -23,14 +24,7 @@ class User < ApplicationRecord
 
       insert_all users
 
-      download_pictures
-    end
-
-    def download_pictures
-      User.all.each do |u|
-        u.remote_picture_url = u.picture_source
-        u.save!
-      end
+      PictureDownloadWorker.perform_bulk(User.pending_download.pluck(:id).each_slice(1).to_a)
     end
   end
 end
